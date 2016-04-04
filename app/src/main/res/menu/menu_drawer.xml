@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_today"
+            android:checked="true"
+            android:icon="@drawable/ic_today_black_24dp"
+            android:title="@string/nav_today" />
+
+        <item
+            android:id="@+id/nav_item_dining_courts"
+            android:icon="@drawable/ic_local_dining_black_24dp"
+            android:title="@string/nav_dining_courts" />
+        <item
+            android:id="@+id/nav_item_restaurants"
+            android:icon="@drawable/ic_near_me_black_24dp"
+            android:title="@string/nav_restaurants" />
+        <item
+            android:id="@+id/nav_item_cafes"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="@string/nav_cafes" />
+        <item
+            android:id="@+id/nav_item_markets"
+            android:icon="@drawable/ic_store_black_24dp"
+            android:title="@string/nav_markets" />
+
+        <item
+            android:id="@+id/nav_item_email"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="@string/nav_email" />
+
+        <item
+            android:id="@+id/other"
+            android:title="other">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_item_settings"
+                        android:icon="@drawable/ic_settings_black_24dp"
+                        android:title="@string/nav_settings" />
+                    <item
+                        android:id="@+id/nav_item_layout"
+                        android:icon="@drawable/ic_input_black_24dp"
+                        android:title="@string/nav_layout" />
+                </group>
+            </menu>
+
+        </item>
+
+    </group>
+</menu>

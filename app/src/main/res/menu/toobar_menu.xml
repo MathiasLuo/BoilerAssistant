@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_login"
+        android:icon="@mipmap/ic_account_circle_white_24dp"
+        android:orderInCategory="100"
+        android:title="@string/login"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_setthing"
+        android:orderInCategory="100"
+        android:title="setting"
+        app:showAsAction="never" />
+</menu>

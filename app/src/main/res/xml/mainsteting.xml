@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout="@layout/preference_item"
+    android:title="@string/action_settings">
+
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="@string/language">
+
+        <ListPreference
+            android:defaultValue="@string/defaultlanguage"
+            android:dialogTitle="Please select a language"
+            android:entries="@array/language"
+            android:entryValues="@array/language"
+            android:key="language"
+            android:layout="@layout/preference_item"
+            android:title="choose language" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="music">
+        <Preference
+            android:defaultValue="false"
+            android:key="tone"
+            android:layout="@layout/preference_item"
+            android:title="choose Tone" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/preference_category_widget"
+        android:title="caching">
+        <Preference
+            android:defaultValue="false"
+            android:key="Caching"
+            android:layout="@layout/preference_item"
+            android:title="Clear cache " />
+    </PreferenceCategory>
+
+</PreferenceScreen>

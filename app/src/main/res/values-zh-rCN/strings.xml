@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">BoilerAssistant</string>
+    <string name="app_tagline">欢迎来到 BoilerAssistant</string>
+    <string name="open">代开</string>
+    <string name="closed">关闭</string>
+    <string name="open_drawer">开</string>
+    <string name="close_drawer">关</string>
+    <string name="nav_today">今天</string>
+    <string name="nav_favorites">日历</string>
+    <string name="nav_dining_courts">食堂</string>
+    <string name="nav_restaurants">地图</string>
+    <string name="nav_cafes">新闻</string>
+    <string name="nav_markets">天气</string>
+    <string name="nav_settings">设置</string>
+    <string name="nav_layout">退出</string>
+    <string name="nav_email">邮件</string>
+    <string name="network_error">Could not reach the network; please try again.</string>
+    <string name="http_error">Could not reach Purdue HFS; please try again.</string>
+    <string name="conversion_error">Encountered unexpected data; please try again.</string>
+    <string name="unexpected_error">An unknown error occurred; please try again.</string>
+    <string name="closed_error">Closed</string>
+    <string name="no_app_error">No app available to handle that request.</string>
+    <string name="retry">Retry</string>
+    <string name="menu_map">Map</string>
+    <string name="menu_call">Call</string>
+    <string name="view_menu">View Menu</string>
+    <string name="description">Description</string>
+    <string name="veg">Vegetarian item</string>
+    <string name="nonveg">Non-vegetarian item</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="noinfo">No information available</string>
+    <string name="allergens">Common Allergens</string>
+    <string name="unknownAllergens">No common allergens</string>
+    <string name="nutrition">Nutrition Facts</string>
+    <string name="noFavoriteDiningCourt">You haven\'t yet chosen a favorite dining court. When you select your favorite dining court from the settings menu, you\'ll see its menu here.</string>
+    <string name="nextMeal">Next meal</string>
+    <string name="favoriteItems">Favorite items</string>
+    <string name="noFavoriteItems">None of your favorite items are being served today. Why not choose a few more favorites? When any of your favorites are being served, they\'ll show up right here.</string>
+    <string name="noMeal">Your favorite dining court is closed for today. Check back tomorrow.</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="favorite_add">%s added to favorites</string>
+    <string name="favorite_remove">%s removed from favorites</string>
+
+    <array name="favoriteDiningCourtPrefs">
+        <item>无</item>
+        <item>Earhart</item>
+        <item>Ford</item>
+        <item>Hillenbrand</item>
+        <item>Wiley</item>
+        <item>Windsor</item>
+    </array>
+
+
+    <string name="Calendar">日历</string>
+    <string name="login">登陆</string>
+    <string name="setting">设置</string>
+    <string name="title_activity_login">登陆</string>
+
+    <string name="News">新闻</string>
+
+    <string name="condition_icon">天气情况图片</string>
+    <string name="temperature">温度</string>
+    <string name="condition">条件</string>
+    <string name="location">地点</string>
+    <string name="powered_by_yahoo">powered by Yahoo</string>
+    <string name="update">更新</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">用户名</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登陆</string>
+    <string name="action_sign_in_short">登陆</string>
+    <string name="error_invalid_email">邮箱格式不正确</string>
+    <string name="error_invalid_password">密码太短了</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="title_activity_maps">地图</string>
+    <string name="umobile_header">uMobile Header</string>
+    <string name="sign_in">登陆</string>
+    <string name="form_error">请输入用户名和密码</string>
+    <string name="error_title">错误</string>
+    <string name="title_activity_maps_activity_two">地图</string>
+
+
+    <string name="hello_world">你好，世界！</string>
+    <string name="action_settings">设置</string>
+    <string name="notify_priority">notify_priority</string>
+    <string name="weather">天气</string>
+
+    <string name="logout_log">你确定要退出当前的账号吗？</string>
+    <string name="layout_title">提示</string>
+
+    <string-array name="language">
+        <item>English</item>
+        <item>汉语</item>
+    </string-array>
+    <string name="language">语言</string>
+    <string name="music_dialog">Select Music</string>
+    <string name="choose">Choose</string>
+
+    <string name="cache">缓存的大小是：</string>
+    <string name="cache_sure">你确定删除缓存吗?</string>
+
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1094f5</color>
+    <color name="primary_dark">#0c74d5</color>
+    <color name="primary_light">#C8E6C9</color>
+    <color name="accent">#FF5722</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="window_background">#FFF5F5F5</color>
+
+    <color name="closed">#D32F2F</color>
+    <color name="open">#6a59a9</color>
+    <color name="vegetarian">#388E3C</color>
+    <color name="vegetarian_bg">#C8E6C9</color>
+    <color name="allergy_bg">#FFCDD2</color>
+
+    <color name="drawer_item_text_default">@color/primary_text</color>
+    <color name="drawer_item_text_checked">@color/primary</color>
+
+
+    <color name="orange_dark">#E64A19</color>
+    <color name="blue_dark">#00537F</color>
+    <color name="yellow">#F5A623</color>
+
+    <color name="body_text_1">#de000000</color>
+    <color name="body_text_2">#8a000000</color>
+    <color name="body_text_3">#60000000</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="gray_de">#666666</color>
+    <color name="list_item_press">#216b74ff</color>
+
+    <color name="colorAccent">#18b000</color>
+</resources>

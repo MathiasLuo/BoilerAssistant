@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:agendaCalendar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_dark"
+        android:theme="@style/MyToolBarTheme" />
+
+
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.tibolte.agendacalendarview.AgendaCalendarView
+            android:id="@+id/agenda_calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            agendaCalendar:agendaCurrentDayTextColor="@color/theme_primary"
+            agendaCalendar:theme="@style/AboutLibrariesTheme.DrawerArrowStyle"
+            agendaCalendar:calendarCurrentDayTextColor="#FFFFFF"
+            agendaCalendar:calendarDayTextColor="@color/theme_text_icons"
+            agendaCalendar:calendarHeaderColor="@color/theme_primary_dark"
+            agendaCalendar:calendarPastDayTextColor="@color/theme_light_primary"
+            agendaCalendar:fabColor="@color/theme_accent" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/ic_add_white_24dp" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Favorites">
+
+        <ListPreference
+            android:defaultValue="None"
+            android:dialogTitle="Favorite Dining Court"
+            android:entries="@array/favoriteDiningCourtPrefs"
+            android:entryValues="@array/favoriteDiningCourtPrefs"
+            android:key="pref_favoriteDiningCourt"
+            android:summary="%s"
+            android:title="Favorite Dining Court" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dietary Preferences">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_isVegetarian"
+            android:summaryOff="Don't highlight vegetarian items"
+            android:summaryOn="Highlight vegetarian items"
+            android:title="Vegetarian" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Allergies">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_eggAllergy"
+            android:summaryOff="Don't highlight items with eggs"
+            android:summaryOn="Highlight items with eggs"
+            android:title="Egg Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_fishAllergy"
+            android:summaryOff="Don't highlight items with fish"
+            android:summaryOn="Highlight items with fish"
+            android:title="Fish Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_glutenAllergy"
+            android:summaryOff="Don't highlight items with gluten"
+            android:summaryOn="Highlight items with gluten"
+            android:title="Gluten Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_milkAllergy"
+            android:summaryOff="Don't highlight items with milk"
+            android:summaryOn="Highlight items with milk"
+            android:title="Milk Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_peanutAllergy"
+            android:summaryOff="Don't highlight items with peanuts"
+            android:summaryOn="Highlight items with peanuts"
+            android:title="Peanut Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_shellfishAllergy"
+            android:summaryOff="Don't highlight items with shellfish"
+            android:summaryOn="Highlight items with shellfish"
+            android:title="Shellfish Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_soyAllergy"
+            android:summaryOff="Don't highlight items with soy"
+            android:summaryOn="Highlight items with soy"
+            android:title="Soy Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_treeNutAllergy"
+            android:summaryOff="Don't highlight items with tree nuts"
+            android:summaryOn="Highlight items with tree nuts"
+            android:title="Tree Nut Allergy" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_wheatAllergy"
+            android:summaryOff="Don't highlight items with wheat"
+            android:summaryOn="Highlight items with wheat"
+            android:title="Wheat Allergy" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
