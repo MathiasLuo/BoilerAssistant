@@ -30,6 +30,11 @@
             android:title="@string/nav_email" />
 
         <item
+            android:id="@+id/nav_item_textbook"
+            android:icon="@drawable/ic_confirmation_number_black_24dp"
+            android:title="@string/textbook"/>
+
+        <item
             android:id="@+id/other"
             android:title="other">
             <menu>

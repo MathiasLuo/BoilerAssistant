@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_title"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/event_edt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_start_time"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/event_edt_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="datetime"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_End_Time"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/event_edt_end_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="datetime"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/notification_event_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/notification_event"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

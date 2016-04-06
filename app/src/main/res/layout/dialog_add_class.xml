@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/class_title"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/class_edt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/class_number"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/class_edt_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/class_meeting_at"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/class_edt_meeting_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/class_type"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/class_spinner"
+        android:dropDownSelector="@color/about_libraries_primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <me.mathiasluo.widget.WeekPickLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/weekPickLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:wpl_AnimDuration="500"
+        app:wpl_CheckedBgColor="@android:color/holo_blue_bright"
+        app:wpl_TextColor="@android:color/black"
+        app:wpl_TextSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_start_time"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/event_edt_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="datetime"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_End_Time"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/event_edt_end_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="datetime"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/class_year_senecter"
+        android:textColor="#80000000"
+        android:textSize="16sp" />
+</LinearLayout>

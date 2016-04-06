@@ -14,6 +14,7 @@
     <string name="nav_settings">Settings</string>
     <string name="nav_layout">Layout</string>
     <string name="nav_email">Email</string>
+    <string name="textbook">TextBook</string>
     <string name="network_error">Could not reach the network; please try again.</string>
     <string name="http_error">Could not reach Purdue HFS; please try again.</string>
     <string name="conversion_error">Encountered unexpected data; please try again.</string>
@@ -98,10 +99,53 @@
         <item>汉语</item>
     </string-array>
 
+    <string-array name="addCalendarEventArray">
+        <item>Add Event</item>
+        <item>Add Class</item>
+    </string-array>
+
+    <string-array name="class_type">
+        <item>LEC--Lecture</item>
+        <item>REC--Recitation</item>
+        <item>PRS--Presentation</item>
+        <item>LAB--Laboratory</item>
+        <item>LBP--LabPrep</item>
+        <item>CLN--Clinic</item>
+        <item>SD--Studio</item>
+    </string-array>
+
+    <string-array name="weeks">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+
     <string name="language">language</string>
     <string name="music_dialog">Select Music</string>
     <string name="choose">choose</string>
 
     <string name="cache">Cache size is:</string>
     <string name="cache_sure">Are you sure you delete the cache?</string>
+
+    <string name="addCalendarEvent">Select the type of event</string>
+    <string name="AddDailyCalendarEvent">Add Daily CalendarEvent</string>
+    <string name="event_title">title</string>
+    <string name="notification_event">Do you want to remind you?</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+    <string name="todo">Add event failed...</string>
+    <string name="event_start_time">StratTime</string>
+    <string name="event_End_Time">EndTime</string>
+    <string name="addClssEvent">Add Class Event</string>
+    <string name="class_title">ClassName</string>
+    <string name="class_number">Class Number</string>
+    <string name="class_meeting_at">Class Meeting at:</string>
+    <string name="class_type">Class Type</string>
+    <string name="class_year_senecter">year/senecter:  2016 spring</string>
+
 </resources>

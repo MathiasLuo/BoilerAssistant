@@ -39,6 +39,7 @@ import me.mathiasluo.page.news.NewsFragment;
 import me.mathiasluo.page.placeholder.PlaceholderFragmentBuilder;
 import me.mathiasluo.page.setting.MainSetingActivity;
 import me.mathiasluo.page.setting.MainSettingFragment;
+import me.mathiasluo.page.textbook.TextBookFragment;
 import me.mathiasluo.page.weather.WeatherFragment;
 import me.mathiasluo.utils.LanguageUtil;
 
@@ -143,7 +144,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_login:
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                // startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                showFragment(item);
                 break;
             case R.id.action_setthing:
                 startActivity(new Intent(MainActivity.this, MainSetingActivity.class));
@@ -196,6 +198,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 case R.id.nav_item_layout:
                     showCloseDialog();
                     return;
+                case R.id.nav_item_textbook:
+                    mCurrentFragment = new TextBookFragment();
+                    break;
+                case R.id.action_login:
+                    // startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    mCurrentFragment = new EmailFragment();
+                    break;
                 default:
                     mCurrentFragment = new PlaceholderFragmentBuilder(title).build();
                     Snackbar.make(contentFrame, "Operation not yet supported", Snackbar.LENGTH_SHORT).show();

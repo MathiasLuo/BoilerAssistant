@@ -57,7 +57,7 @@
     <string name="title_activity_login">登陆</string>
 
     <string name="News">新闻</string>
-
+    <string name="textbook">书本</string>
     <string name="condition_icon">天气情况图片</string>
     <string name="temperature">温度</string>
     <string name="condition">条件</string>
@@ -96,11 +96,42 @@
         <item>English</item>
         <item>汉语</item>
     </string-array>
+
+    <string-array name="addCalendarEventArray">
+        <item>添加事件</item>
+        <item>添加课程</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+
     <string name="language">语言</string>
-    <string name="music_dialog">Select Music</string>
-    <string name="choose">Choose</string>
+    <string name="music_dialog">选择提示音</string>
+    <string name="choose">选择</string>
 
     <string name="cache">缓存的大小是：</string>
     <string name="cache_sure">你确定删除缓存吗?</string>
+
+    <string name="addCalendarEvent">选择事件类型</string>
+    <string name="AddDailyCalendarEvent">添加日常事情</string>
+    <string name="event_title">标题</string>
+    <string name="notification_event">你希望提醒你吗？</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="todo">添加事件失败</string>
+    <string name="event_start_time">StratTime</string>
+    <string name="event_End_Time">EndTime</string>
+    <string name="addClssEvent">Add Class Event</string>
+    <string name="class_title">ClassName</string>
+    <string name="class_number">Class Number</string>
+    <string name="class_meeting_at">Class Meeting at:</string>
+    <string name="class_type">Class Type</string>
+    <string name="class_year_senecter">year/senecter</string>
 
 </resources>

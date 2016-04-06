@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 23
@@ -95,5 +96,7 @@ dependencies {
     compile('com.github.afollestad.material-dialogs:core:0.8.5.7@aar') {
         transitive = true
     }
+    compile 'com.andreabaccega:android-form-edittext:1.2.1@aar'
+    compile 'weekselection.com.library:library:1.0.0'
 
 }
