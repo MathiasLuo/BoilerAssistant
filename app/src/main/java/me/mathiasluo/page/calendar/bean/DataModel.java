@@ -1,5 +1,8 @@
 package me.mathiasluo.page.calendar.bean;
 
+import android.util.Log;
+
+import java.util.Date;
 import java.util.List;
 
 import io.realm.Realm;
@@ -90,6 +93,60 @@ public class DataModel {
         // Delete all matches
         results.clear();
         realm.commitTransaction();
+    }
+
+
+    public final static boolean isHaveClassInTime(Date startDate,
+                                                  Date endDate) {
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<ClassEvent> result1 = realm.where(ClassEvent.class).between("startDate", startDate, endDate).findAll();
+        RealmResults<ClassEvent> result2 = realm.where(ClassEvent.class).between("endDate", startDate, endDate).findAll();
+        Log.e("==============>>>>>>>>>>", result1.size() + "==========" + result2.size());
+        if (result1.size() <= 0 && result2.size() <= 0) {
+            return false;
+        } else return true;
+
+    }
+
+
+    public final static boolean isHaveClassInTime(ClassEvent classEvent) {
+        List<ClassEvent> datas = getAllClassEvents();
+
+        if (datas == null) return false;
+        for (ClassEvent mClass : datas) {
+            for (int day : mClass.getWeeks()) {
+                for (int mDay : classEvent.getWeeks()) {
+                    if (day == mDay) {
+                        Date mClassStartDate = mClass.getStartDate();
+                        Date mClassEndDate = mClass.getEndDate();
+                        mClassEndDate.setDate(1);
+                        mClassStartDate.setDate(1);
+                        Log.e("============》》》》》》day", day + "=== " + mClassStartDate.toString() + "\n" + mClassEndDate.toString());
+                        Date ClassStartDate = classEvent.getStartDate();
+                        Date ClassEndDate = classEvent.getEndDate();
+                        ClassStartDate.setDate(1);
+                        ClassEndDate.setDate(1);
+                        Log.e("============》》》》》》", ClassStartDate.toString() + "\n" + ClassEndDate.toString());
+                        if (mClassStartDate.after(ClassStartDate) && mClassStartDate.before(ClassEndDate)) {
+                            return true;
+                        }
+                        if (mClassEndDate.after(ClassStartDate) && mClassEndDate.before(ClassEndDate)) {
+                            return true;
+                        }
+                        if (ClassStartDate.after(mClassStartDate) && ClassStartDate.before(mClassEndDate)) {
+                            return true;
+                        }
+                        if (ClassEndDate.after(mClassStartDate) && ClassEndDate.before(mClassEndDate)) {
+                            return true;
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+        return false;
     }
 
 

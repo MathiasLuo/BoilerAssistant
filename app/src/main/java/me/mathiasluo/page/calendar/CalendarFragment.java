@@ -362,10 +362,21 @@ public class CalendarFragment extends MainFragment<CalendarView, CalendarPresent
                     }
 
                     int classType = mSpinner.getSelectedItemPosition();
-                    saveClassEvent(startDate, endDate, className, classNumber, classMeeting, classType, one, two, thr, fro, fiv, six, sev);
-                    dialog.dismiss();
-                    Toast.makeText(getActivity(), getString(R.string.save_sucess), Toast.LENGTH_SHORT).show();
-                    Log.e("==============》》》》》》》》》》》", DataModel.getAllClassEvents().toString());
+
+                    ClassEvent currentEvent = new ClassEvent(startDate, endDate, className, classNumber, classMeeting, classType,
+                            one, two, thr, fro, fiv, six, sev);
+
+                    if (DataModel.isHaveClassInTime(currentEvent)) {
+                        Log.e("================>>>>>>>>>>", "已经在里面了哟");
+                    } else {
+                        saveClassEvent(startDate, endDate, className, classNumber, classMeeting, classType, one, two, thr, fro, fiv, six, sev);
+                        dialog.dismiss();
+                        Toast.makeText(getActivity(), getString(R.string.save_sucess), Toast.LENGTH_SHORT).show();
+                        Log.e("==============》》》》》》》》》》》", DataModel.getAllClassEvents().toString());
+
+                    }
+
+
                 } else {
                     Toast.makeText(getActivity(), getString(R.string.no_edit), Toast.LENGTH_SHORT).show();
                 }
@@ -396,7 +407,8 @@ public class CalendarFragment extends MainFragment<CalendarView, CalendarPresent
     }
 
 
-    private void saveClassEvent(Date startDate, Date endDate, String className, String classNumber, String classMeetingAt, int classType, int one, int two, int thr, int fro, int fiv, int six, int sev) {
+    private void saveClassEvent(Date startDate, Date endDate, String className, String classNumber,
+                                String classMeetingAt, int classType, int one, int two, int thr, int fro, int fiv, int six, int sev) {
         DataModel.saveClassEvent(new ClassEvent(startDate, endDate, className, classNumber, classMeetingAt, classType, one, two, thr, fro, fiv, six, sev));
         initAgendaCalendarView();
     }
@@ -492,7 +504,7 @@ public class CalendarFragment extends MainFragment<CalendarView, CalendarPresent
                     new DailyCalendarEvent(dailyEvent.getTitle(),
                             dailyEvent.getTitle(),
                             dailyEvent.getTitle(),
-                            ContextCompat.getColor(APP.getInstance(),  colors[new Random().nextInt(5)]),
+                            ContextCompat.getColor(APP.getInstance(), colors[new Random().nextInt(5)]),
                             startTime, endTime, false, dailyEvent);
             mDailyCalendarEvent.setId(11);
             calendarEvents.add(mDailyCalendarEvent);
@@ -745,6 +757,18 @@ public class CalendarFragment extends MainFragment<CalendarView, CalendarPresent
             c_begin.add(Calendar.DAY_OF_YEAR, 1);
         }
         return calendars;
+    }
+
+    private List<Calendar> getAllCalendars() {
+        List<ClassEvent> classEvents = DataModel.getAllClassEvents();
+        List<Calendar> listCalendars = null;
+        if (classEvents == null) return null;
+        for (ClassEvent classEvent : classEvents) {
+            for (Integer day : classEvent.getWeeks()) {
+                listCalendars.addAll(getCa(day));
+            }
+        }
+        return listCalendars;
     }
 
 }

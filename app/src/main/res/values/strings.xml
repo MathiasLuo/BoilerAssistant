@@ -150,5 +150,6 @@
     <string name="no_edit">You have not entered the complete</string>
     <string name="save_sucess">Add Event Success</string>
     <string name="delect">remove</string>
+    <string name="ReadyHave">the time have a class</string>
 
 </resources>
