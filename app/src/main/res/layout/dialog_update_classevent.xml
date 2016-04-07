@@ -127,17 +127,30 @@
             android:id="@+id/save_btn"
             android:layout_marginLeft="12dp"
             android:textSize="18sp"
+            android:padding="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="@string/save" />
 
         <TextView
+            android:padding="4dp"
             android:textSize="18sp"
             android:id="@+id/cancel_btn"
             android:text="@string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/save_btn" />
+
+
+        <TextView
+            android:id="@+id/delect_btn"
+            android:padding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@id/cancel_btn"
+            android:text="@string/delect"
+            android:textSize="18sp" />
     </RelativeLayout>
 </LinearLayout>

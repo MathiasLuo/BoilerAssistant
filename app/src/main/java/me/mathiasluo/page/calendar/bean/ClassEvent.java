@@ -1,8 +1,11 @@
 package me.mathiasluo.page.calendar.bean;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by mathiasluo on 16-4-6.
@@ -12,33 +15,66 @@ public class ClassEvent extends RealmObject {
     Date endDate;
 
     String className;
+    @PrimaryKey
     String classNumber;
-
     String classMeetingAt;
-    int classType;
-    byte[] weeks = new byte[7];
 
+    int classType;
+
+    int one = -1;
+    int two = -1;
+    int thr = -1;
+    int fro = -1;
+    int fiv = -1;
+    int six = -1;
+    int sev = -1;
 
 
     public ClassEvent() {
     }
 
-    public ClassEvent(Date startDate, Date endDate, String className, String classNumber, String classMeetingAt, int classType, byte[] weeks) {
+    public List<Integer> getWeeks() {
+
+        List<Integer> weeks = new ArrayList<>();
+        if (one != -1) {
+            weeks.add(one);
+        }
+        if (two != -1) {
+            weeks.add(two);
+        }
+        if (thr != -1) {
+            weeks.add(thr);
+        }
+        if (fro != -1) {
+            weeks.add(fro);
+        }
+        if (fiv != -1) {
+            weeks.add(fiv);
+        }
+        if (six != -1) {
+            weeks.add(six);
+        }
+        if (sev != -1) {
+            weeks.add(sev);
+        }
+        return weeks;
+
+    }
+
+    public ClassEvent(Date startDate, Date endDate, String className, String classNumber, String classMeetingAt, int classType, int one, int two, int thr, int fro, int fiv, int six, int sev) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.className = className;
         this.classNumber = classNumber;
         this.classMeetingAt = classMeetingAt;
         this.classType = classType;
-        this.weeks = weeks;
-    }
-
-    public byte[] getWeeks() {
-        return weeks;
-    }
-
-    public void setWeeks(byte[] weeks) {
-        this.weeks = weeks;
+        this.one = one;
+        this.two = two;
+        this.thr = thr;
+        this.fro = fro;
+        this.fiv = fiv;
+        this.six = six;
+        this.sev = sev;
     }
 
     public Date getStartDate() {

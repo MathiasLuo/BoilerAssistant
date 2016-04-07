@@ -22,7 +22,9 @@ public class DataModel {
         query.or().equalTo("name", "Peter");*/
         // Execute the query:
         RealmResults<DailyEvent> result1 = query.findAll();
-        return result1.subList(0, result1.size() - 1);
+        if (result1.size() > 0)
+            return result1.subList(0, result1.size());
+        else return null;
     }
 
 
@@ -30,13 +32,15 @@ public class DataModel {
         Realm realm = Realm.getDefaultInstance();
         RealmQuery<ClassEvent> query = realm.where(ClassEvent.class);
         RealmResults<ClassEvent> result1 = query.findAll();
-        return result1.subList(0, result1.size() - 1);
+        if (result1.size() > 0)
+            return result1.subList(0, result1.size());
+        else return null;
     }
 
     public final static DailyEvent saveDailyEvent(DailyEvent event) {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        DailyEvent realmUser = realm.copyToRealm(event);
+        DailyEvent realmUser = realm.copyToRealmOrUpdate(event);
         realm.commitTransaction();
         return realmUser;
     }
@@ -44,7 +48,7 @@ public class DataModel {
     public final static ClassEvent saveClassEvent(ClassEvent event) {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        ClassEvent realmUser = realm.copyToRealm(event);
+        ClassEvent realmUser = realm.copyToRealmOrUpdate(event);
         realm.commitTransaction();
         return realmUser;
     }
@@ -63,6 +67,29 @@ public class DataModel {
         ClassEvent realmUser = realm.copyToRealmOrUpdate(event);
         realm.commitTransaction();
         return realmUser;
+    }
+
+    public final static void removeDailyEventByTitle(String title) {
+        Realm realm = Realm.getDefaultInstance();
+        // obtain the results of a query
+        RealmResults<DailyEvent> results = realm.where(DailyEvent.class).endsWith("title", title).findAll();
+        // All changes to data must happen in a transaction
+        realm.beginTransaction();
+        // Delete all matches
+        results.clear();
+        realm.commitTransaction();
+    }
+
+
+    public final static void removeClassEventByTitle(String classNumber) {
+        Realm realm = Realm.getDefaultInstance();
+        // obtain the results of a query
+        RealmResults<ClassEvent> results = realm.where(ClassEvent.class).endsWith("classNumber", classNumber).findAll();
+        // All changes to data must happen in a transaction
+        realm.beginTransaction();
+        // Delete all matches
+        results.clear();
+        realm.commitTransaction();
     }
 
 

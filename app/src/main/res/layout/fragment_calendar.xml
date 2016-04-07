@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.github.tibolte.agendacalendarview.AgendaCalendarView
+        <me.mathiasluo.widget.AgendaCalendarView
             android:id="@+id/agenda_calendar_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

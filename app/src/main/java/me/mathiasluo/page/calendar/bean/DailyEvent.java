@@ -3,6 +3,7 @@ package me.mathiasluo.page.calendar.bean;
 import java.util.Date;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by mathiasluo on 16-4-6.
@@ -10,6 +11,7 @@ import io.realm.RealmObject;
 public class DailyEvent extends RealmObject {
     Date startDate;
     Date endDate;
+    @PrimaryKey
     String title = "normal";
     boolean notification;
 

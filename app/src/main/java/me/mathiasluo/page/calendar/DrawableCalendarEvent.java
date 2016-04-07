@@ -27,9 +27,7 @@ public class DrawableCalendarEvent extends BaseCalendarEvent {
         super(calendarEvent);
         this.mDrawableId = calendarEvent.getDrawableId();
     }
-
     // endregion
-
     // region Public methods
 
     public int getDrawableId() {

@@ -147,5 +147,8 @@
     <string name="class_meeting_at">Class Meeting at:</string>
     <string name="class_type">Class Type</string>
     <string name="class_year_senecter">year/senecter:  2016 spring</string>
+    <string name="no_edit">You have not entered the complete</string>
+    <string name="save_sucess">Add Event Success</string>
+    <string name="delect">remove</string>
 
 </resources>
