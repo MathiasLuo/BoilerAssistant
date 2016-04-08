@@ -1,6 +1,7 @@
 package me.mathiasluo.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -19,6 +20,7 @@ import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -40,7 +42,9 @@ import me.mathiasluo.page.placeholder.PlaceholderFragmentBuilder;
 import me.mathiasluo.page.setting.MainSetingActivity;
 import me.mathiasluo.page.setting.MainSettingFragment;
 import me.mathiasluo.page.textbook.TextBookFragment;
+import me.mathiasluo.page.userlogin.UserLoginFragment;
 import me.mathiasluo.page.weather.WeatherFragment;
+import me.mathiasluo.page.weather.weather.WeatherActivity;
 import me.mathiasluo.utils.LanguageUtil;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -157,8 +161,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public void showFragment(MenuItem menuItem) {
 
 
-
-
         String title = menuItem.getTitle().toString();
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         if (mCurrentFragment != null) {
@@ -188,6 +190,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 case R.id.nav_item_markets:
                     // mCurrentFragment = new RetailLocationListFragmentBuilder("Markets", title).build();
                     mCurrentFragment = new WeatherFragment();
+                    //startActivity(new Intent(MainActivity.this, WeatherActivity.class));
                     break;
                 case R.id.nav_item_settings:
                     //mCurrentFragment = new SettingFragmentBuilder(title).build();
@@ -196,8 +199,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
                 case R.id.nav_item_email:
                     //mCurrentFragment = new AboutFragmentBuilder(title).build();
-                    mCurrentFragment = new EmailFragment();
-                    break;
+                    //mCurrentFragment = new EmailFragment();
+                    new WebView(this).loadUrl("https://outlook.office.com/owa/?realm=purdue.edu");
+                    return;
+
                 case R.id.nav_item_layout:
                     showCloseDialog();
                     return;
@@ -206,7 +211,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     break;
                 case R.id.action_login:
                     // startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                    mCurrentFragment = new EmailFragment();
+                    mCurrentFragment = new UserLoginFragment();
                     break;
                 default:
                     mCurrentFragment = new PlaceholderFragmentBuilder(title).build();
@@ -232,6 +237,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         Log.e("===============>>>>>>>>>>>>", "click positive");
                         //在这里清除账号消息
+                        MainActivity.this.finish();
                     }
                 })
                 .onNegative(new MaterialDialog.SingleButtonCallback() {

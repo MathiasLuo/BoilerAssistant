@@ -84,7 +84,7 @@ public class SingleNewsFragment extends Fragment implements SwipeRefreshLayout.O
                 } else {
                     adapter.notifyDataSetChanged();
                 }
-                refresh.setRefreshing(false);
+                if (refresh != null) refresh.setRefreshing(false);
             }
         });
         task.execute(NewsFragment.tabList.get(mKey).url());

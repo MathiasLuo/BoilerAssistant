@@ -34,4 +34,25 @@
     <color name="list_item_press">#216b74ff</color>
 
     <color name="colorAccent">#18b000</color>
+
+    <color name="yellow1">#F9E60E</color>
+    <color name="yellow2">#F9F89D</color>
+    <color name="orange4">#F7BE45</color>
+    <color name="orange5">#F7D896</color>
+    <color name="blue2">#19FCDA</color>
+    <color name="blue25">#D9F7F2</color>
+    <color name="grey05">#ACA899</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="white2">#DDDDDD</color>
+    <color name="purduegold">#FFD700</color>
+    <color name="black">#000000</color>
+
+    <!-- Weather Color Scheme -->
+    <color name="lighter_gray">#5C5C5C</color>
+    <color name="light_gray">#444444</color>
+    <color name="gray">#3a3a3a</color>
+    <color name="dark_gray">#262626</color>
+    <color name="darker_gray">#1a1a1a</color>
+    <color name="soft_yellow">#fff67d</color>
+
 </resources>

@@ -26,7 +26,7 @@ public class AlarReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.e("==============》》》》》", "收到了alert");
+        Log.e("==============》》》》》", "收到了ａｌｅｒｔ");
         this.context = context;
         title = intent.getStringExtra("title");
         time = intent.getStringExtra("time");
@@ -47,13 +47,14 @@ public class AlarReceiver extends BroadcastReceiver {
                 .setOngoing(false)//ture，设置他为一个正在进行的通知。他们通常是用来表示一个后台任务,用户积极参与(如播放音乐)或以某种方式正在等待,因此占用设备(如一个文件下载,同步操作,主动网络连接)
                 .setDefaults(Notification.DEFAULT_VIBRATE)//向通知添加声音、闪灯和振动效果的最简单、最一致的方式是使用当前的用户默认设置，使用defaults属性，可以组合
                 //Notification.DEFAULT_ALL  Notification.DEFAULT_SOUND 添加声音 // requires VIBRATE permission
+                .setSmallIcon(R.mipmap.ic_notifications_none_white_24dp);///设置通知小ICON
 
-                .setSmallIcon(R.mipmap.ic_notifications_none_white_24dp);//设置通知小ICON
 
-        String sount_url = SPUtil.getMusicPath(context);
-        if (!sount_url.equals(SPUtil.NOACESSTOKEN)) {
-            mBuilder.setSound(Uri.parse(sount_url));
+        String sound_url = SPUtil.getMusicPath(context);
+        if (!sound_url.equals(SPUtil.NOACESSTOKEN)) {
+            mBuilder.setSound(Uri.parse(sound_url));
         }
+
 
         Notification notification = mBuilder.build();
         notification.flags = Notification.FLAG_AUTO_CANCEL;

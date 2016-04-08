@@ -2,6 +2,7 @@ package me.mathiasluo.page.textbook;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -39,7 +40,7 @@ public class TextBookFragment extends BaseFragment implements View.OnClickListen
     @InjectView(R.id.fab)
     FloatingActionButton floatingActionButton;
 
-    String BASEURL = "https://www.amazon.cn/s/ref=nb_sb_ss_i_5_4?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&url=search-alias%3Dstripbooks&field-keywords=purdue ";
+    String BASEURL = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=purdue+";
 
 
     @Override
@@ -55,9 +56,8 @@ public class TextBookFragment extends BaseFragment implements View.OnClickListen
                 return true;
             }
         });
-        mWebView.loadUrl("https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/b?ie=UTF8&node=658390051");
        /* mWebView.loadUrl("https://login.microsoftonline.com");*/
-        mWebView.loadUrl(BASEURL + "大学语文");
+        mWebView.loadUrl(BASEURL);
     }
 
     @Override
@@ -110,7 +110,7 @@ public class TextBookFragment extends BaseFragment implements View.OnClickListen
                     .itemsCallback(new MaterialDialog.ListCallback() {
                         @Override
                         public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                            mWebView.loadUrl(BASEURL + text+"textbook");
+                            mWebView.loadUrl(BASEURL + text + "+textbook");
                         }
                     })
                     .show();
@@ -140,7 +140,8 @@ public class TextBookFragment extends BaseFragment implements View.OnClickListen
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                mWebView.loadUrl(BASEURL + edit.getText().toString()+"textbook");
+                mWebView.loadUrl(BASEURL + edit.getText().toString() + "+textbook");
+                Log.e("===================>>>>>>>>>>>>>>>>>>",BASEURL + edit.getText().toString() + "+textbook");
             }
         });
 

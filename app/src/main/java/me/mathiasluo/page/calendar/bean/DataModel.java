@@ -47,7 +47,6 @@ public class DataModel {
     public final static DailyEvent saveDailyEvent(Context context, DailyEvent event) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(event.getStartDate());
-        Log.e("============》》》》》》》》》》》》》", event.toString());
         if (event.isNotification()) {
             AlarmUtil.addAlarm(context, AlarReceiver.class, event.getTitle()
                     , event.getStartDate().getHours() + ":" + event.getStartDate().getMinutes()

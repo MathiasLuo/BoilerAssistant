@@ -145,4 +145,57 @@
     <string name="alert_booksname">You have not added courses</string>
     <string name="seacher">search</string>
 
+
+    <!-- Main Menu Button Labels -->
+    <string name="main_menu_label_map">Campus Map</string>
+    <string name="main_menu_label_bus">CityBus</string>
+    <string name="main_menu_label_weather">Weather</string>
+    <string name="main_menu_label_email">Email</string>
+    <string name="main_menu_label_corec">Co-Rec Center</string>
+    <string name="main_menu_label_dining">Dining Courts</string>
+    <string name="main_menu_label_events">Events Directory</string>
+    <string name="main_menu_label_sports">Sports</string>
+
+    <!-- Dining Courts -->
+    <string name="dining_court_earhart">Earhart</string>
+    <string name="dining_court_ford">Ford</string>
+    <string name="dining_court_hillenbrand">Hillenbrand</string>
+    <string name="dining_court_windsor">Windsor</string>
+    <string name="dining_court_wiley">Wiley</string>
+
+
+    <!-- Unorganized -->
+    <string name="prev_button">Prev</string>
+    <string name="next_button">Next</string>
+    <string name="time_place_tf">Time/place:</string>
+    <string name="date_tf">Date:</string>
+    <string name="tickets_tf">Tickets:</string>
+    <string name="additional_tf">Additional Info:</string>
+    <string name="hourly_button">Hourly</string>
+    <string name="weekly_button">Weekly</string>
+    <string name="radar_button">Radar</string>
+    <string name="forecast_text_view">Forecast:</string>
+    <string name="action_search">Search</string>
+    <string name="Earhart">Earhart</string>
+    <string name="Ford">Ford</string>
+    <string name="Hillenbrand">Hillenbrand</string>
+    <string name="Windsor">Windsor</string>
+    <string name="Wiley">Wiley</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="hourly_forecast_title">Hourly Forecast</string>
+    <string name="weekly_forecast_title">Weekly Forecast</string>
+    <string name="weather_title">Current Weather</string>
+    <string name="test_weather_button">API Test</string>
+    <string name="title_activity_dining_courts">Dining Courts</string>
+    <string name="linetime">Line Time</string>
+    <string name="seating">Seating and Availability</string>
+    <string name="foodrating">Food Rating</string>
+    <string name="info">Menus and Info</string>
+    <string name="submit">Submit</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="title_activity_sports">SportsActivity</string>
+    <string name="title_activity_dining_court_menu_parser">DiningCourtMenuParserActivity</string>
+
 </resources>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <include layout="@layout/include_appbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/linear_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weatherTitle"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="0"
+            android:background="@drawable/yellow_ring"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:padding="20dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/currentWeatherIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/linear_header"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gray_opaque_circle"
+        android:padding="5dp"
+        android:translationX="55dp"
+        android:translationY="-65dp" />
+
+
+
+    <TextView
+        android:id="@+id/hourlyForecastTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linear_hourly"
+        android:background="@color/primary"
+        android:text="@string/hourly_forecast_title"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/weatherTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/primary"
+        android:text="@string/weather_title"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <SeekBar
+        android:id="@+id/hourlySeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linear_hourly"
+        android:max="12"
+        android:padding="20dp"
+        android:progress="6" />
+
+    <LinearLayout
+        android:id="@+id/linear_hourly"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/hourlyTime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/hourlyIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="0"
+            android:background="@drawable/gray_opaque_circle"
+            android:gravity="center"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/hourlyTemp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hourlySummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_hourly"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/weeklyForecastTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hourlySeekBar"
+        android:background="@color/primary"
+        android:text="@string/weekly_forecast_title"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/weeklyForecastTitle" >
+
+        <LinearLayout
+            android:id="@+id/linear_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/soft_yellow"
+            android:orientation="horizontal"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp" >
+
+            <!-- Reuse the weekly_forecast_cell layout -->
+			<!-- WARNING: Do not rename the id's of the included layouts below -->
+            <include
+                android:id="@+id/day_1"
+                layout="@layout/weekly_forecast_cell" />
+
+            <include
+                android:id="@+id/day_2"
+                layout="@layout/weekly_forecast_cell" />
+
+            <include
+                android:id="@+id/day_3"
+                layout="@layout/weekly_forecast_cell" />
+
+            <include
+                android:id="@+id/day_4"
+                layout="@layout/weekly_forecast_cell" />
+
+            <include
+                android:id="@+id/day_5"
+                layout="@layout/weekly_forecast_cell" />
+
+            <include
+                android:id="@+id/day_6"
+                layout="@layout/weekly_forecast_cell" />
+
+            <include
+                android:id="@+id/day_7"
+                layout="@layout/weekly_forecast_cell" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    </RelativeLayout>
+    </LinearLayout>

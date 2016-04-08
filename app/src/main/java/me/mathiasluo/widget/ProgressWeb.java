@@ -22,6 +22,7 @@ public class ProgressWeb extends SwipeRefreshLayout {
     WebView mWebView;
 
     DownloadManager downloadManager;
+
     public ProgressWeb(Context context, AttributeSet attrs) {
         super(context, attrs);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
@@ -41,6 +42,7 @@ public class ProgressWeb extends SwipeRefreshLayout {
         addView(mWebView);
         initWebView();
     }
+
     public void initWebView() {
         setWebChromeClient(new ProgressWebChomeClient(this));
         setOnRefreshListener(new OnRefreshListener() {
