@@ -30,7 +30,7 @@ public class EmailFragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        mToolbar.setTitle("Email");
+        mToolbar.setTitle(getString(R.string.email));
         ((MainActivity) getActivity()).setToolbar(mToolbar);
 
 

@@ -80,7 +80,6 @@ public class CalendarFragment extends MainFragment<CalendarView, CalendarPresent
         mToolbar.setTitle("Calendar");
         ((MainActivity) getActivity()).setToolbar(mToolbar);
         fab.setOnClickListener(this);
-
         initAgendaCalendarView();
 
     }
@@ -367,16 +366,13 @@ public class CalendarFragment extends MainFragment<CalendarView, CalendarPresent
                             one, two, thr, fro, fiv, six, sev);
 
                     if (DataModel.isHaveClassInTime(currentEvent)) {
-                        Log.e("================>>>>>>>>>>", "已经在里面了哟");
+                        Toast.makeText(getActivity(), getString(R.string.ready), Toast.LENGTH_SHORT).show();
                     } else {
                         saveClassEvent(startDate, endDate, className, classNumber, classMeeting, classType, one, two, thr, fro, fiv, six, sev);
                         dialog.dismiss();
                         Toast.makeText(getActivity(), getString(R.string.save_sucess), Toast.LENGTH_SHORT).show();
                         Log.e("==============》》》》》》》》》》》", DataModel.getAllClassEvents().toString());
-
                     }
-
-
                 } else {
                     Toast.makeText(getActivity(), getString(R.string.no_edit), Toast.LENGTH_SHORT).show();
                 }
@@ -396,13 +392,13 @@ public class CalendarFragment extends MainFragment<CalendarView, CalendarPresent
     }
 
     private void saveDailyEvent(Date startDate, Date endDate, String title, boolean notification) {
-        DataModel.saveDailyEvent(new DailyEvent(startDate, endDate, title, notification));
+        DataModel.saveDailyEvent(getActivity(),new DailyEvent(startDate, endDate, title, notification));
         initAgendaCalendarView();
     }
 
     private void saveDailyEventAndDelectOld(Date startDate, Date endDate, String oldTitle, String title, boolean notification) {
         DataModel.removeDailyEventByTitle(oldTitle);
-        DataModel.saveDailyEvent(new DailyEvent(startDate, endDate, title, notification));
+        DataModel.saveDailyEvent(getActivity(),new DailyEvent(startDate, endDate, title, notification));
         initAgendaCalendarView();
     }
 

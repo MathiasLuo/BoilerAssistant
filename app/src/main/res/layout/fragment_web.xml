@@ -4,10 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-   <include layout="@layout/include_appbar"/>
+    <include layout="@layout/include_appbar" />
 
     <me.mathiasluo.widget.ProgressWeb
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
 </LinearLayout>

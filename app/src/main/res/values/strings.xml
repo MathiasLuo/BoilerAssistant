@@ -104,6 +104,13 @@
         <item>Add Class</item>
     </string-array>
 
+    <string-array name="selectBook">
+        <item>
+Choose books that have been added</item>
+        <item>
+Manual input</item>
+    </string-array>
+
     <string-array name="class_type">
         <item>LEC--Lecture</item>
         <item>REC--Recitation</item>
@@ -151,5 +158,14 @@
     <string name="save_sucess">Add Event Success</string>
     <string name="delect">remove</string>
     <string name="ReadyHave">the time have a class</string>
+    <string name="ready">This time you have lesson</string>
+    <string name="email">email</string>
+    <string name="comeingMessage">there is a alarm comeing</string>
+    <string name="sousuo">search the book</string>
+    <string name="book_title">select book</string>
+    <string name="alert_booksname">You have not added courses</string>
+    <string name="seacher">search</string>
+
+    <string name="edit_bookA">Writing Book Name</string>
 
 </resources>

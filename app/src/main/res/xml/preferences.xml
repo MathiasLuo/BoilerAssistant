@@ -25,7 +25,7 @@
             android:title="Vegetarian" />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Allergies">
+   <!-- <PreferenceCategory android:title="Allergies">
 
         <SwitchPreference
             android:defaultValue="false"
@@ -90,6 +90,6 @@
             android:summaryOn="Highlight items with wheat"
             android:title="Wheat Allergy" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
 </PreferenceScreen>

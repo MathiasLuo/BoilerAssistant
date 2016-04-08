@@ -9,17 +9,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 import butterknife.InjectView;
 import me.mathiasluo.R;
 import me.mathiasluo.base.BaseListAdapter;
 import me.mathiasluo.model.Location;
-import me.mathiasluo.service.DiningServiceHelper;
 
 public class LocationListAdapter<ListItem extends Location> extends BaseListAdapter<ListItem> {
+
+    private int pics[] = {
+            R.mipmap.earhart,
+            R.mipmap.ford,
+            R.mipmap.hillenbrand,
+            R.mipmap.wiley,
+            R.mipmap.windsor
+    };
 
     public LocationListAdapter(List<ListItem> dataSet, OnClickListener<ListItem> onClickListener) {
         super(dataSet, onClickListener);
@@ -57,12 +62,13 @@ public class LocationListAdapter<ListItem extends Location> extends BaseListAdap
             }
 
             // set card image
-            Glide.with(vh.image.getContext())
-                    .load(DiningServiceHelper.getFileUrl(loc.getTileImage()))
+          /*  Glide.with(vh.image.getContext())
+                   *//* .load(DiningServiceHelper.getFileUrl(loc.getTileImage()))*//*
                     .centerCrop()
                     .placeholder(R.drawable.placeholder)
                     .crossFade()
-                    .into(vh.image);
+                    .into(vh.image);*/
+            vh.image.setImageResource(pics[position]);
         }
     }
 

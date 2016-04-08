@@ -1,13 +1,17 @@
 package me.mathiasluo.page.calendar.bean;
 
+import android.content.Context;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
+import me.mathiasluo.APP;
 
 /**
  * Created by mathiasluo on 16-4-6.
@@ -40,7 +44,25 @@ public class DataModel {
         else return null;
     }
 
-    public final static DailyEvent saveDailyEvent(DailyEvent event) {
+    public final static DailyEvent saveDailyEvent(Context context, DailyEvent event) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(event.getStartDate());
+        Log.e("============》》》》》》》》》》》》》", event.toString());
+        if (event.isNotification()) {
+            AlarmUtil.addAlarm(context, AlarReceiver.class, event.getTitle()
+                    , event.getStartDate().getHours() + ":" + event.getStartDate().getMinutes()
+                            + "--" + event.getEndDate().getHours() + ":" + event.getEndDate().getMinutes()
+                    , calendar);
+            Log.e("==================>>>>>>>>>", "添加数据" + event.getStartDate().getHours() + ":" + event.getStartDate().getMinutes()
+                    + "--" + event.getEndDate().getHours() + ":" + event.getEndDate().getMinutes());
+        } else {
+            AlarmUtil.cancelAlarm(context, AlarReceiver.class, event.getTitle()
+                    , event.getStartDate().getHours() + ":" + event.getStartDate().getMinutes()
+                            + "--" + event.getEndDate().getHours() + ":" + event.getEndDate().getMinutes()
+                    , calendar);
+            Log.e("==================>>>>>>>>>", "删除数据" + event.getStartDate().getHours() + ":" + event.getStartDate().getMinutes()
+                    + "--" + event.getEndDate().getHours() + ":" + event.getEndDate().getMinutes());
+        }
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
         DailyEvent realmUser = realm.copyToRealmOrUpdate(event);
@@ -96,16 +118,14 @@ public class DataModel {
     }
 
 
-    public final static boolean isHaveClassInTime(Date startDate,
-                                                  Date endDate) {
-        Realm realm = Realm.getDefaultInstance();
-        RealmResults<ClassEvent> result1 = realm.where(ClassEvent.class).between("startDate", startDate, endDate).findAll();
-        RealmResults<ClassEvent> result2 = realm.where(ClassEvent.class).between("endDate", startDate, endDate).findAll();
-        Log.e("==============>>>>>>>>>>", result1.size() + "==========" + result2.size());
-        if (result1.size() <= 0 && result2.size() <= 0) {
-            return false;
-        } else return true;
-
+    public final static List<String> getAllBookName() {
+        List<ClassEvent> classEvents = getAllClassEvents();
+        if (classEvents == null) return null;
+        List<String> names = new ArrayList<>();
+        for (ClassEvent r : classEvents) {
+            names.add(r.getClassName());
+        }
+        return names;
     }
 
 

@@ -156,6 +156,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     public void showFragment(MenuItem menuItem) {
 
+
+
+
         String title = menuItem.getTitle().toString();
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         if (mCurrentFragment != null) {
